@@ -102,7 +102,7 @@ Hexo： 博客框架 中文文档
 NexT： Hexo主题（换个门面呗） 中文文档
 git： 分布式版本控制系统（记录过程、上传到远程库） 廖雪峰Git教程（廖大的python、JS教程也值得学习） Pro Git中文版
 github： 远程版本库（本站就是托管在这">
-<meta property="og:updated_time" content="2016-10-30T09:33:33.733Z">
+<meta property="og:updated_time" content="2016-10-30T09:55:05.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人博客--建站文档">
 <meta name="twitter:description" content="前言好短许多文档有详细教程，此篇博文为简版，全程win7操作，快速上手，且让你知其所以然。
@@ -421,14 +421,14 @@ github： 远程版本库（本站就是托管在这">
 <p><strong>new_post_name:</strong> :year-:month-:day-:title.md </p>
 </blockquote>
 <p>创建新 md 文件时，文件名自动加上日期前缀，且空格被短横替代，例如: “2016-10-27-hello-world.md”</p>
-<p> 变量|描述<br> :—-:|:—-:<br> :title|标题（小写，空格将会被替换为短杠）<br> :year|建立的年份，比如， 2015<br> :month|建立的月份（有前导零），比如， 04<br> :day|建立的日期（有前导零），比如， 07</p>
+<p> |变量|描述|<br> |:—-:|:—-:|<br> |:title|标题（小写，空格将会被替换为短杠）|<br> |:year|建立的年份，比如， 2015|<br> |:month|建立的月份（有前导零），比如， 04|<br> |:day|建立的日期（有前导零），比如， 07|</p>
 </li>
 <li><p><strong>创建 Markdown 文件</strong>，执行命令：</p>
 <pre><code>&gt; hexo new [布局] &lt;文件名&gt;    #从 scaffolds 文件夹中寻找模板创建到相应路径
-</code></pre><p> 布局|相应路径<br> :—-:|:—-:<br> post(默认值)|source/_posts<br> page|source<br> draft|source/_drafts<br> &lt;自定义&gt;|source/_posts(默认路径)</p>
+</code></pre><p> |布局|相应路径|<br> |:—-:|:—-:|<br> |post(默认值)|source/_posts|<br> |page|source|<br> |draft|source/_drafts|<br> |&lt;自定义&gt;|source/_posts(默认路径)|</p>
 </li>
 <li><p><strong>Markdown 常用语法</strong></p>
-<p> 元素|语法|例子<br> :—-:|:—-:|:—-:<br> 分割线|3个或以上 ‘ - ‘ 或 ‘ * ‘ 或 ‘ _ ‘|---<br> 标题|1~6个 ‘ # ‘代表 h1 ~ h6，’ = ‘代表 h1， ‘ - ‘代表 h2|## 黄瓜的多种用途<br> <em>倾斜</em>|前后加1个 ‘ * ‘ 或 ‘ _ ‘|*倾斜的黄瓜*<br> <strong>加粗</strong>|前后加2个 ‘ * ‘ 或 ‘ _ ‘|**加粗的黄瓜**<br> <strong><em>倾斜、加粗</em></strong>|前后加3个 ‘ * ‘ 或 ‘ _ ‘|***倾斜且加粗的黄瓜***<br> 引用|’ &gt; ‘ 表示一级引用，’ &gt;&gt; ‘ 表示二级，…|> 引用黄瓜<br> 代码|4个或以上的空格|黄瓜前面有四个空格<br> 链接|[文字][链接]|[黄瓜](<a href="https://wengqp.github.io" target="_blank" rel="external">https://wengqp.github.io</a>)<br> 图片|![替代文字](网址)|![黄瓜](path/to/hg.jpg)<br> 列表|无序列表用 ‘ - ‘， 有序列表用 ‘ 1. ‘|- 黄瓜</p>
+<p> |元素|语法|例子|<br> |:—-:|:—-:|:—-:|<br> |分割线|3个或以上 ‘ - ‘ 或 ‘ * ‘ 或 ‘ _ ‘|---|<br> |标题|1~6个 ‘ # ‘代表 h1 ~ h6，’ = ‘代表 h1， ‘ - ‘代表 h2|## 黄瓜的多种用途|<br> |<em>倾斜</em>|前后加1个 ‘ * ‘ 或 ‘ _ ‘|*倾斜的黄瓜*<br> |<strong>加粗</strong>|前后加2个 ‘ * ‘ 或 ‘ _ ‘|**加粗的黄瓜**|<br> |<strong><em>倾斜、加粗</em></strong>|前后加3个 ‘ * ‘ 或 ‘ _ ‘|***倾斜且加粗的黄瓜***|<br> |引用|’ &gt; ‘ 表示一级引用，’ &gt;&gt; ‘ 表示二级，…|> 引用黄瓜<br> |代码|4个或以上的空格|黄瓜前面有四个空格|<br> |链接|[文字][链接]|[黄瓜](<a href="https://wengqp.github.io)|" target="_blank" rel="external">https://wengqp.github.io)|</a><br> |图片|![替代文字](网址)|![黄瓜](path/to/hg.jpg)|<br> |列表|无序列表用 ‘ - ‘， 有序列表用 ‘ 1. ‘|- 黄瓜|</p>
 <p>表格语法（对称用’ :—-: ‘）：</p>
 <blockquote>
 <p>表头1 | 表头2 | 表头3<br>-— |  —- | —-<br>内容 | 内容 | 内容<br>内容 | 内容 | 内容</p>
