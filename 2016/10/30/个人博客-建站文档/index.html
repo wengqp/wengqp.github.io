@@ -102,7 +102,7 @@ Hexo： 博客框架 中文文档
 NexT： Hexo主题（换个门面呗） 中文文档
 git： 分布式版本控制系统（记录过程、上传到远程库） 廖雪峰Git教程（廖大的python、JS教程也值得学习） Pro Git中文版
 github： 远程版本库（本站就是托管在这">
-<meta property="og:updated_time" content="2016-10-30T10:23:13.570Z">
+<meta property="og:updated_time" content="2016-10-31T03:48:15.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人博客--建站文档">
 <meta name="twitter:description" content="前言好短许多文档有详细教程，此篇博文为简版，全程win7操作，快速上手，且让你知其所以然。
@@ -327,103 +327,56 @@ github： 远程版本库（本站就是托管在这">
 <li><strong>NexT</strong>： Hexo主题（换个门面呗） <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external"><em>中文文档</em></a></li>
 <li><strong>git</strong>： 分布式版本控制系统（记录过程、上传到远程库） <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external"><em>廖雪峰Git教程</em></a>（廖大的python、JS教程也值得学习） <a href="http://iissnan.com/progit/" target="_blank" rel="external"><em>Pro Git中文版</em></a></li>
 <li><strong>github</strong>： 远程版本库（本站就是托管在这里）</li>
-<li><strong>Markdown</strong>： .md文件（用于写文章，<a href="https://www.zhihu.com/question/19637157" target="_blank" rel="external"><em>选一个编辑器呗</em></a>） <a href="http://www.appinn.com/markdown/" target="_blank" rel="external"><em>语法中文文档</em></a></li>
+<li><strong>Markdown</strong>：.md文件（用于写文章，<a href="https://www.zhihu.com/question/19637157" target="_blank" rel="external"><em>选一个编辑器呗</em></a>） <a href="http://www.appinn.com/markdown/" target="_blank" rel="external"><em>语法中文文档</em></a></li>
 <li><strong>node.js</strong>： 服务器端的JavaScript解释器（就是把浏览器脚本语言JS搬到后台）</li>
 <li>符号声明： <strong>&lt;…&gt;</strong> 为必填， <strong>[…]</strong> 为选填，<strong>“…”</strong> 为字符串</li>
 </ul>
 <hr>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li>安装 <a href="https://nodejs.org/en/" target="_blank" rel="external"><em>nodeJS</em></a> 。</li>
-<li><p>安装 Hexo，在 cmd 命令行中输入：</p>
-<pre><code>&gt; npm install -g hexo-cli    :: 安装 Hexo
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装-nodeJS"><a href="#安装-nodeJS" class="headerlink" title="安装 nodeJS"></a>安装 <a href="https://nodejs.org/en/" target="_blank" rel="external"><em>nodeJS</em></a></h3><h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>在 <code>cmd</code> 命令行中输入：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; npm install -g hexo-cli    :: 安装 Hexo    </div><div class="line">&gt; hexo init blog    :: 在当前路径新建 blog 项目      </div><div class="line">&gt; <span class="built_in">cd</span> &lt;../blog&gt;    :: 将当前路径切换到 blog 文件夹下      </div><div class="line">&gt; npm install    :: 安装 /blog/package.json 的 dependencies 插件      </div><div class="line">&gt; hexo server    :: 开启服务，现在打开 localhost:<span class="number">4000</span> 就能看到网页建成了</div></pre></td></tr></table></figure>
+<p><code>hexo server</code> 也可以缩写成 <code>hexo s</code>，加入 <code>--debug</code> 参数可以看到具体加载信息。<br>按 Ctrl+C 退出服务。</p>
+<h3 id="安装NexT"><a href="#安装NexT" class="headerlink" title="安装NexT"></a>安装NexT</h3><p>下载 <code>Hexo</code> 主题 <a href="https://github.com/iissnan/hexo-theme-next/archive/v5.0.1.zip" target="_blank" rel="external"><em>NexT</em></a>，解压并改名为 <code>next</code>，放到 blog 文件夹中的 <code>themes</code> 下。<br> blog 项目中有两个地方有 <strong>_config.yml</strong>（配置文件），blog/ 下的是<strong><code>站点配置文件</code></strong>，blog/themes/next/ 下的是<strong><code>主题配置文件</code></strong>。 </p>
+<h4 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a><strong>更换主题</strong></h4><p>用 <a href="http://rj.baidu.com/soft/detail/13478.html?ald" target="_blank" rel="external"><em>nodepad++</em></a> 打开<strong><code>站点配置文件</code></strong>，找到 <code>theme</code> 字段，改为：</p>
+<pre><code>theme: next
+</code></pre><p>重新启动服务就可以看到效果，否则执行 <code>hexo clean</code> 命令清理缓存再重启试试。</p>
+<h4 id="更改站点配置文件"><a href="#更改站点配置文件" class="headerlink" title="更改站点配置文件"></a><strong>更改站点配置文件</strong></h4><pre><code>#简体中文 
+language: zh-Hans
 
-&gt; hexo init blog    :: 在当前路径新建 blog 项目
+#设置头像
+avatar: source/images/&lt;图片全称&gt;
 
-&gt; cd &lt;../blog&gt;    :: 将当前路径切换到 blog 文件夹下
-
-&gt; npm install    :: 安装 /blog/package.json 的 dependencies 插件
-
-&gt; hexo server    :: 开启服务，现在打开 localhost:4000 就能看到网页建成了
-</code></pre></li>
-</ul>
-<p>   hexo server 也可以缩写成 hexo s，加入 –debug 参数可以看到具体加载信息。按 Ctrl+C 退出服务。</p>
-<ul>
-<li><p>下载 Hexo 主题 <a href="https://github.com/iissnan/hexo-theme-next/archive/v5.0.1.zip" target="_blank" rel="external"><em>NexT</em></a>，解压并改名为 next，放到 blog 文件夹中的 themes 下。</p>
-<p> blog 项目中有两个地方有 <strong>_config.yml</strong>（配置文件），blog/     下的是<strong>站点配置文件</strong>，blog/themes/next/ 下的是<strong>主题配置文件</strong>。 </p>
-<ol>
-<li><p><strong>更换主题</strong>为 NexT  -&gt;  用 <a href="http://rj.baidu.com/soft/detail/13478.html?ald" target="_blank" rel="external"><em>nodepad++</em></a> 打开<strong>站点配置文件</strong>，找到 theme 字段，改为：</p>
-<blockquote>
-<p>  theme: next</p>
-</blockquote>
-<p>重新启动服务就可以看到效果，否则执行 hexo clean 命令清理缓存再重启试试。</p>
-</li>
-<li><p><strong>更改站点配置</strong>  -&gt;  <strong>站点配置文件</strong>：</p>
-<blockquote>
-<p> #简体中文<br> language: zh-Hans</p>
-<p> #设置头像<br> avatar: source/images/&lt;图片全称&gt;</p>
-<p> #试试改改其他参数 title、subtitle、description、author等</p>
-</blockquote>
-</li>
-<li><p><strong>切换Scheme</strong>  -&gt;  <strong>主题配置文件</strong>，三选一：</p>
-<blockquote>
-<p> #scheme: Muse<br> #scheme: Mist<br> scheme: Pisces</p>
-</blockquote>
-</li>
-<li><p><strong>添加站内搜索</strong>，blog 目录下执行命令：</p>
-<pre><code>&gt; npm install hexo-generator-searchdb --save
-</code></pre><p><strong>站点配置文件</strong>加入：</p>
-<blockquote>
+#试试改改其他参数 title、subtitle、description、author等
+</code></pre><h4 id="切换Scheme"><a href="#切换Scheme" class="headerlink" title="切换Scheme"></a><strong>切换Scheme</strong></h4><p>修改<strong><code>主题配置文件</code></strong>，三选一：</p>
+<pre><code>#scheme: Muse
+#scheme: Mist 
+scheme: Pisces
+</code></pre><h4 id="添加站内搜索"><a href="#添加站内搜索" class="headerlink" title="添加站内搜索"></a><strong>添加站内搜索</strong></h4><p>blog 目录下执行命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; npm install hexo-generator-searchdb --save</div></pre></td></tr></table></figure>
+<p><strong><code>站点配置文件</code></strong>加入：</p>
 <pre><code>search: 
  path: search.xml
  field: post
  format: html
  limit: 10000
-</code></pre></blockquote>
-</li>
-<li><p><strong>多说评论</strong>，考虑到<a href="http://duoshuo.com/create-site/" target="_blank" rel="external"><em>创建站点</em></a>需要站点地址，先操作下一步，再执行下面部署，再添加：</p>
-</li>
-</ol>
-</li>
-</ul>
-<hr>
-<h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><ul>
-<li><p>安装 <a href="https://git-for-windows.github.io/" target="_blank" rel="external"><em>Git for windows</em></a> (<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000" target="_blank" rel="external"><em>其他操作系统</em></a>)，并执行以下命令：</p>
-<pre><code>&gt; git config --global user.name &quot;你的名字&quot;    :: 本机全局设置你的名字
-
-&gt; git config --global user.email &quot;你的邮箱&quot;    :: 本机全局设置你的邮箱
-</code></pre><p>拓展知识： git 的常用命令（<strong>这里不需要使用</strong>， hexo 已经有命令替代）</p>
-<pre><code>&gt; git init    :: 路径切换到 blog 目录下执行此命令，会多出一个隐藏文件夹.git，这就是git的版本库
-
-&gt; git add &lt;文件&gt;    :: 将文件添加到 git 的暂存区，添加所有就用 git add .
-
-&gt; git commit -m &quot;注释&quot;    :: 将暂存区提交到当前分区（master，除非你切换到其他分区）
-
-&gt; git remote add origin git@github.com:&lt;你的名字&gt;/&lt;项目名称&gt;.git    :: 将远程库项目关联到当前路径 
-
-&gt; git push -u origin master    :: 本地库 master 分支内容推送到远程库 master 分支，-u 参数建立分支关联，以后只需要输入git push就能实现推送
-</code></pre></li>
-<li><p>注册 <a href="https://github.com/" target="_blank" rel="external"><em>github</em></a> 账户，设置好 <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000" target="_blank" rel="external"><em>SSH Key</em></a>（免得上传要验证），然后进官网添加项目，项目名设为 <strong>&lt;你的名字&gt;.github.io</strong>（这个就是你静态博客网址了），修改<strong>站点配置文件</strong>：</p>
-<blockquote>
+</code></pre><h4 id="多说评论"><a href="#多说评论" class="headerlink" title="多说评论"></a><strong>多说评论</strong></h4><p>考虑到 <a href="http://duoshuo.com/create-site/" target="_blank" rel="external"><em>创建站点</em></a> 需要提供站点地址，先部署到github，再添加多说。<br>多说“我要安装” ，创建站点， 在<code>站点配置文件</code>新增：</p>
+<pre><code>duoshuo_shortname: &lt;多说域名&gt;
+</code></pre><hr>
+<h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><h3 id="安装-Git-for-windows"><a href="#安装-Git-for-windows" class="headerlink" title="安装 Git for windows"></a>安装 <a href="https://git-for-windows.github.io/" target="_blank" rel="external"><em>Git for windows</em></a></h3><p>执行以下命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;  git config --global user.name "你的名字"    :: 本机全局设置你的名字        </div><div class="line">&gt;  git config --global user.email "你的邮箱"    :: 本机全局设置你的邮箱</div></pre></td></tr></table></figure>
+<p>拓展知识： <code>git</code> 的常用命令（<strong>这里不需要使用</strong>， hexo 已经有命令替代）</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;  git init    :: 路径切换到 blog 目录下执行此命令，会多出一个隐藏文件夹.git，这就是git的版本库</div><div class="line">&gt;  git add &lt;文件&gt;    :: 将文件添加到 git 的暂存区，添加所有就用 git add .</div><div class="line">&gt;  git commit -m "注释"    :: 将暂存区提交到当前分区（master，除非你切换到其他分区</div><div class="line">&gt;  git remote add origin git@github.com:&lt;你的名字&gt;/&lt;项目名称&gt;.git    :: 将远程库项目关联到当前路径</div><div class="line">&gt;  git push -u origin master    :: 本地库 master 分支内容推送到远程库 master 分支，-u 参数建立分支关联，以后只需要输入git push就能实现推送</div></pre></td></tr></table></figure>
+<h3 id="注册-github-账户"><a href="#注册-github-账户" class="headerlink" title="注册 github 账户"></a>注册 <a href="https://github.com/" target="_blank" rel="external"><em>github</em></a> 账户</h3><p>设置好 <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000" target="_blank" rel="external"><em>SSH Key</em></a>（免得上传要验证），然后进官网添加项目，项目名设为 <strong><code>&lt;你的名字&gt;.github.io</code></strong>（这个就是你静态博客网址了），修改<strong><code>站点配置文件</code></strong>：</p>
 <pre><code>deploy:
  type: git
  repo: https://github.com/&lt;你的名字&gt;/&lt;你的名字&gt;.github.io.git    # 项目地址
- branch: master    # 项目分支
-</code></pre></blockquote>
-<p>生成静态文件，并自动部署到网站，执行以下命令：</p>
-<pre><code>&gt; hexo g -d    :: 相当于 hexo generate --deploy，hexo deploy --generate，hexo d -g
-</code></pre><p>现在就可以打开网址 <strong>&lt;你的名字&gt;.github.io</strong> 。</p>
-</li>
-</ul>
+ branch: master    # 项目分支     
+</code></pre><p> 生成静态文件，并自动部署到网站，执行以下命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; hexo g -d    :: 相当于 hexo generate --deploy，hexo deploy --generate，hexo d -g</div></pre></td></tr></table></figure>
+<p> 现在就可以打开网址 <strong><code>&lt;你的名字&gt;.github.io</code></strong> 。</p>
 <hr>
-<h2 id="动手写篇博文"><a href="#动手写篇博文" class="headerlink" title="动手写篇博文"></a>动手写篇博文</h2><ul>
-<li><p>修改<strong>站点配置文件</strong>：</p>
-<blockquote>
-<p><strong>new_post_name:</strong> :year-:month-:day-:title.md </p>
-</blockquote>
-<p>创建新 md 文件时，文件名自动加上日期前缀，且空格被短横替代，例如: “2016-10-27-hello-world.md”</p>
-</li>
-</ul>
-<table>
+<h2 id="动手写篇博文"><a href="#动手写篇博文" class="headerlink" title="动手写篇博文"></a>动手写篇博文</h2><h3 id="修改站点配置文件："><a href="#修改站点配置文件：" class="headerlink" title="修改站点配置文件："></a>修改<strong>站点配置文件</strong>：</h3><p> 创建新 md 文件时，文件名自动加上日期前缀，且空格被短横替代，例如: “2016-10-27-hello-world.md”</p>
+<pre><code>new_post_name: :year-:month-:day-:title.md 
+</code></pre><table>
 <thead>
 <tr>
 <th style="text-align:center">变量</th>
@@ -449,11 +402,8 @@ github： 远程版本库（本站就是托管在这">
 </tr>
 </tbody>
 </table>
-<ul>
-<li><p><strong>创建 Markdown 文件</strong>，执行命令：</p>
-<pre><code>&gt; hexo new [布局] &lt;文件名&gt;    #从 scaffolds 文件夹中寻找模板创建到相应路径    
-</code></pre></li>
-</ul>
+<h3 id="创建-Markdown-文件"><a href="#创建-Markdown-文件" class="headerlink" title="创建 Markdown 文件"></a><strong>创建 Markdown 文件</strong></h3><p>执行命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; hexo new [布局] &lt;文件名&gt;    #从 scaffolds 文件夹中寻找模板创建到相应路径</div></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -480,10 +430,7 @@ github： 远程版本库（本站就是托管在这">
 </tr>
 </tbody>
 </table>
-<ul>
-<li><strong>Markdown 常用语法</strong></li>
-</ul>
-<table>
+<h3 id="Github-Markdown-常用语法"><a href="#Github-Markdown-常用语法" class="headerlink" title="Github Markdown 常用语法"></a><strong>Github Markdown 常用语法</strong></h3><table>
 <thead>
 <tr>
 <th style="text-align:center">元素</th>
@@ -494,61 +441,53 @@ github： 远程版本库（本站就是托管在这">
 <tbody>
 <tr>
 <td style="text-align:center">分割线</td>
-<td style="text-align:center">3个或以上 ‘ - ‘ 或 ‘ * ‘ 或 ‘ _ ‘</td>
+<td style="text-align:center">3个或以上 <code>-</code> 或 <code>*</code> 或 <code>_</code></td>
 <td style="text-align:center">---</td>
 </tr>
 <tr>
 <td style="text-align:center">标题</td>
-<td style="text-align:center">1~6个 ‘ # ‘代表 h1 ~ h6，’ = ‘代表 h1， ‘ - ‘代表 h2</td>
-<td style="text-align:center">## 黄瓜的多种用途</td>
+<td style="text-align:center">1~6个 <code>#</code> 代表 h1 ~ h6，<br><code>=</code>代表 h1， <code>-</code> 代表 h2</td>
+<td style="text-align:center">## 哈哈</td>
 </tr>
 <tr>
-<td style="text-align:center"><em>倾斜</em></td>
-<td style="text-align:center">前后加1个 ‘ * ‘ 或 ‘ _ ‘</td>
-<td style="text-align:center">*倾斜的黄瓜*</td>
+<td style="text-align:center"><em>倾斜</em><br><strong>加粗</strong><br><strong><em>倾斜、加粗</em></strong></td>
+<td style="text-align:center">前后加1~3个 <code>*</code> 或 <code>_</code></td>
+<td style="text-align:center">*倾斜的哈哈*<br>**加粗的哈哈**<br>***哈哈***</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>加粗</strong></td>
-<td style="text-align:center">前后加2个 ‘ * ‘ 或 ‘ _ ‘</td>
-<td style="text-align:center">**加粗的黄瓜**</td>
+<td style="text-align:center">多级引用</td>
+<td style="text-align:center"><code>&gt;</code> 表示一级引用，<code>&gt;&gt;</code> 表示二级，…</td>
+<td style="text-align:center">> 一级哈哈<br> &gt;&gt; 二级哈哈</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong><em>倾斜、加粗</em></strong></td>
-<td style="text-align:center">前后加3个 ‘ * ‘ 或 ‘ _ ‘</td>
-<td style="text-align:center">***倾斜且加粗的黄瓜***</td>
+<td style="text-align:center">插入代码</td>
+<td style="text-align:center">上下加3个 `  (在数字1左边)，<br>可语法高亮</td>
+<td style="text-align:center">``` cmd<br> 代码<br> ```</td>
 </tr>
 <tr>
-<td style="text-align:center">引用</td>
-<td style="text-align:center">‘ &gt; ‘ 表示一级引用，’ &gt;&gt; ‘ 表示二级，…</td>
-<td style="text-align:center">> 引用黄瓜</td>
+<td style="text-align:center">文字超链接</td>
+<td style="text-align:center">[文字](链接, “悬停显示”)</td>
+<td style="text-align:center">[哈哈](<a href="https://wengqp.github.io" target="_blank" rel="external">https://wengqp.github.io</a>)</td>
 </tr>
 <tr>
-<td style="text-align:center">代码</td>
-<td style="text-align:center">4个或以上的空格</td>
-<td style="text-align:center">黄瓜前面有四个空格</td>
-</tr>
-<tr>
-<td style="text-align:center">链接</td>
-<td style="text-align:center">[文字][链接]</td>
-<td style="text-align:center">[黄瓜](<a href="https://wengqp.github.io" target="_blank" rel="external">https://wengqp.github.io</a>)</td>
-</tr>
-<tr>
-<td style="text-align:center">图片</td>
-<td style="text-align:center">![替代文字](网址)</td>
-<td style="text-align:center">![黄瓜](path/to/hg.jpg)</td>
+<td style="text-align:center">插入图片</td>
+<td style="text-align:center">![替代文字](网址, “悬停文字”)</td>
+<td style="text-align:center">![哈哈](<a href="https://github.com/wengqp/wengqp.github.io/raw/master/images/avtar.jpg" target="_blank" rel="external">https://github.com/wengqp/wengqp.github.io/raw/master/images/avtar.jpg</a>)</td>
 </tr>
 <tr>
 <td style="text-align:center">列表</td>
-<td style="text-align:center">无序列表用 ‘ - ‘ 或 ‘ * ‘ 或 ‘ + ‘， 有序列表用 ‘ 1. ‘</td>
-<td style="text-align:center">- 黄瓜</td>
+<td style="text-align:center">无序列表用 <code>-</code> 或 <code>*</code> 或 <code>+</code>， <br>有序列表用 <code>1.</code><br>多级累加一个Tab</td>
+<td style="text-align:center">- 哈哈</td>
 </tr>
 </tbody>
 </table>
-<p> 表格语法（对称用’ :—-: ‘）：</p>
-<blockquote>
-<p>| 表头1 | 表头2 | 表头3 |<br>| —- |  —- | —- |<br>| 内容 | 内容 | 内容 |<br>| 内容 | 内容 | 内容 |</p>
-</blockquote>
-
+<p>换行可以用 <code>&lt;br&gt;</code>，文字高亮用 ` `，转义用反斜杠 <code>\</code><br>插入代码语法高亮：windows(<code>cmd</code>)，os(<code>bash</code>)，c++(<code>cpp</code>)，…<br>如果图片是引用 github 库的，用 <code>https://github.com/用户名/项目名/raw/分支名/文件夹/图片</code></p>
+<p>表格语法（对称用 <code>:\-\-\-\-:</code>）：</p>
+<pre><code>| 表头 | 表头 | 表头 |
+| ---- | ---- | ---- |
+| 内容 | 内容 | 内容 |
+| 内容 | 内容 | 内容 |
+</code></pre>
       
     </div>
 
@@ -681,7 +620,7 @@ github： 远程版本库（本站就是托管在这">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言好短"><span class="nav-number">1.</span> <span class="nav-text">前言好短</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要知道的名词解释和以后再看的中文教程"><span class="nav-number">2.</span> <span class="nav-text">需要知道的名词解释和以后再看的中文教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到-github"><span class="nav-number">4.</span> <span class="nav-text">部署到 github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动手写篇博文"><span class="nav-number">5.</span> <span class="nav-text">动手写篇博文</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言好短"><span class="nav-number">1.</span> <span class="nav-text">前言好短</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要知道的名词解释和以后再看的中文教程"><span class="nav-number">2.</span> <span class="nav-text">需要知道的名词解释和以后再看的中文教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-nodeJS"><span class="nav-number">3.1.</span> <span class="nav-text">安装 nodeJS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">3.2.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装NexT"><span class="nav-number">3.3.</span> <span class="nav-text">安装NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更换主题"><span class="nav-number">3.3.1.</span> <span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更改站点配置文件"><span class="nav-number">3.3.2.</span> <span class="nav-text">更改站点配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换Scheme"><span class="nav-number">3.3.3.</span> <span class="nav-text">切换Scheme</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加站内搜索"><span class="nav-number">3.3.4.</span> <span class="nav-text">添加站内搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多说评论"><span class="nav-number">3.3.5.</span> <span class="nav-text">多说评论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到-github"><span class="nav-number">4.</span> <span class="nav-text">部署到 github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Git-for-windows"><span class="nav-number">4.1.</span> <span class="nav-text">安装 Git for windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册-github-账户"><span class="nav-number">4.2.</span> <span class="nav-text">注册 github 账户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动手写篇博文"><span class="nav-number">5.</span> <span class="nav-text">动手写篇博文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改站点配置文件："><span class="nav-number">5.1.</span> <span class="nav-text">修改站点配置文件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-Markdown-文件"><span class="nav-number">5.2.</span> <span class="nav-text">创建 Markdown 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-Markdown-常用语法"><span class="nav-number">5.3.</span> <span class="nav-text">Github Markdown 常用语法</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
